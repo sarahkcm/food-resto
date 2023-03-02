@@ -24,9 +24,11 @@ const HomeComponent = () => {
       {isClicked && (
         <div className='relative'>
           <div className='absolute top-0 right-0 lg:hidden'>
-            <div className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-80 xl:border-l focus:outline-none'>
-              <Settings clicked={isClicked} setClicked={setIsClicked} />
-            </div>
+            <Settings
+              
+              clicked={isClicked}
+              setClicked={setIsClicked}
+            />
           </div>
         </div>
       )}
@@ -56,7 +58,7 @@ const HomeComponent = () => {
         </div>
         <div className='hidden lg:block lg:w-12/12'>
           <div className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-80 xl:border-l focus:outline-none'>
-            <Settings />
+            <Settings  />
           </div>
         </div>
       </div>

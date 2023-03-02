@@ -5,13 +5,13 @@ import { HotDishesData } from "../constants/hot-dishes";
 
 const pathToAsset = "/assets/image/";
 
-const Settings = ({ clicked, setClicked }: any) => {
+const Settings = ({ clicked, setClicked, style }: any) => {
   const [active, setActive] = React.useState(null);
   const handleOptionClick = (index: any) => {
     setActive(index);
   };
   return (
-    <section className=''>
+    <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-80 focus:outline-none'>
       <div className='absolute -right-14 p-2 transform -translate-x-full lg:hidden'>
         <button
           onClick={() => setClicked(!clicked)}
