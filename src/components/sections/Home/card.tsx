@@ -14,7 +14,7 @@ const Card = ({ img, quantity, title, price }: any) => {
               <div className='relative flex justify-center items-center'>
                 <img
                   src={img}
-                  className='shadow-xl rounded-full align-middle border-none absolute max-w-[150px]'
+                  className='shadow-xl rounded-full align-middle border-none absolute max-w-[64vw] -top-20'
                 />
               </div>
             </div>

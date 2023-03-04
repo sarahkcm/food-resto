@@ -29,7 +29,7 @@ const NavBar = () => {
               <div className=' md:items-stretch md:justify-start md:z-10'>
                 <div className='hidden md:block fixed left-0 '>
                   <div className=''>
-                    <div className='flex w-16 flex-col items-center space-y-1 py-6 bg-baseDark2 '>
+                    <div className='flex w-16 flex-col items-center space-y-1 py-6 bg-baseDark2 h-screen '>
                       <div className='flex items-center justify-center rounded-md p-4'>
                         <img
                           src={pathToAssetToSideBar + "Logo.png"}

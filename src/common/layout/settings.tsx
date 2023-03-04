@@ -11,7 +11,7 @@ const Settings = ({ clicked, setClicked, style }: any) => {
     setActive(index);
   };
   return (
-    <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-80 focus:outline-none'>
+    <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-80 focus:outline-none xl:w-[30vw]'>
       <div className='absolute -right-14 p-2 transform -translate-x-full lg:hidden'>
         <button
           onClick={() => setClicked(!clicked)}
@@ -80,7 +80,7 @@ const Settings = ({ clicked, setClicked, style }: any) => {
               {HotDishesData.map(({ title, img, price, quantity }, index) => {
                 return (
                   <div key={index} className='space-y-4'>
-                    <a href='#' className='flex items-start space-x-2 group'>
+                    <a href='#' className='flex items-start space-x-2 group '>
                       <img
                         className='flex-shrink-0 object-cover w-10 h-10 rounded-full'
                         src={img}

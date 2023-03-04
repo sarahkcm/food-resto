@@ -12,7 +12,7 @@ const HomeComponent = () => {
   const [isClicked, setIsClicked] = React.useState(false);
 
   return (
-    <div className=' bg-baseDark w-screen h-screen'>
+    <div className=' bg-baseDark w-screen h-screen  xl:w-full'>
       <NavBar />
       <div className='relative'>
         <div className='absolute right-0 top-0 md:block hidden lg:hidden'>
@@ -24,11 +24,7 @@ const HomeComponent = () => {
       {isClicked && (
         <div className='relative'>
           <div className='absolute top-0 right-0 lg:hidden'>
-            <Settings
-              
-              clicked={isClicked}
-              setClicked={setIsClicked}
-            />
+            <Settings clicked={isClicked} setClicked={setIsClicked} />
           </div>
         </div>
       )}
@@ -57,8 +53,8 @@ const HomeComponent = () => {
           </div>
         </div>
         <div className='hidden lg:block lg:w-12/12'>
-          <div className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-80 xl:border-l focus:outline-none'>
-            <Settings  />
+          <div className='fixed -inset-y-0 top-0  bg-baseDark2 w-80'>
+            <Settings />
           </div>
         </div>
       </div>
