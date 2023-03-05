@@ -9,22 +9,21 @@ import DropDown from "./drop-down";
 import Hero from "./hero";
 const pathToAsset = "/assets/image/";
 const HomeComponent = () => {
-  const [isClicked, setIsClicked] = React.useState(false);
-
+  const [clicked, setClicked] = React.useState<boolean>(false);
   return (
     <div className=' bg-baseDark w-screen h-screen  xl:w-full'>
-      <NavBar />
+      <NavBar clicked={clicked} setClicked={setClicked} />
       <div className='relative'>
         <div className='absolute right-0 top-0 md:block hidden lg:hidden'>
-          <button onClick={() => setIsClicked(!isClicked)}>
+          <button onClick={() => setClicked(true)}>
             <img src={pathToAsset + "Setting.png"} />
           </button>
         </div>
       </div>
-      {isClicked && (
+      {clicked && (
         <div className='relative'>
           <div className='absolute top-0 right-0 lg:hidden'>
-            <Settings clicked={isClicked} setClicked={setIsClicked} />
+            <Settings clicked={clicked} setClicked={setClicked} />
           </div>
         </div>
       )}
@@ -40,13 +39,15 @@ const HomeComponent = () => {
             <div className='grid xs:grid-cols-2 place-items-center bg-baseDark gap-x-10 sm:grid-cols-3 lg:grid-cols-3 lg:w-11/12 sm:px-4'>
               {HotDishesData.map(({ title, img, price, quantity }, index) => {
                 return (
-                  <Card
-                    title={title}
-                    img={img}
-                    price={price}
-                    quantity={quantity}
-                    cle={index}
-                  />
+                  <div key={index} className=''>
+                    <Card
+                      title={title}
+                      img={img}
+                      price={price}
+                      quantity={quantity}
+                      cle={index}
+                    />
+                  </div>
                 );
               })}
             </div>

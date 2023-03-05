@@ -14,13 +14,13 @@ const Card = ({ img, quantity, title, price }: any) => {
               <div className='relative flex justify-center items-center'>
                 <img
                   src={img}
-                  className='shadow-xl rounded-full align-middle border-none absolute max-w-[64vw] -top-20'
+                  className='shadow-xl rounded-full align-middle border-none absolute max-w-[64vw] -top-28'
                 />
               </div>
             </div>
           </div>
           {isClicked ? (
-            <div className='text-center mt-[5.2rem]'>
+            <div className='text-center mt-[4rem] md:mt-[3rem]'>
               <h3 className='text-sm text-white font-semibold leading-normal '>
                 {title}
               </h3>
@@ -34,7 +34,7 @@ const Card = ({ img, quantity, title, price }: any) => {
               </button>
             </div>
           ) : (
-            <div className='text-center mt-[5.2rem]'>
+            <div className='text-center mt-[4rem] md:mt-[3rem]'>
               <h3 className='text-sm text-white font-semibold leading-normal mb-1'>
                 {title}
               </h3>

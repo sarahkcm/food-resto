@@ -1,20 +1,14 @@
 import React from "react";
-import Title from "../components/Home/title";
-import { Options } from "../constants/options";
-import { HotDishesData } from "../constants/hot-dishes";
-
-const pathToAsset = "/assets/image/";
+import Cart from "../containers/cart";
+import ConfirmCartButton from "../containers/confirm-cart-button";
+import Options from "../containers/options";
 
 const Settings = ({ clicked, setClicked, style }: any) => {
-  const [active, setActive] = React.useState(null);
-  const handleOptionClick = (index: any) => {
-    setActive(index);
-  };
   return (
-    <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-80 focus:outline-none xl:w-[30vw]'>
+    <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-72 sm:w-80 lg:w-96  focus:outline-none xl:w-[30vw]'>
       <div className='absolute -right-14 p-2 transform -translate-x-full lg:hidden'>
         <button
-          onClick={() => setClicked(!clicked)}
+          onClick={() => setClicked(false)}
           className='p-2 rounded-md text-dark dark:text-light focus:outline-none focus:ring'
         >
           <svg
@@ -25,47 +19,18 @@ const Settings = ({ clicked, setClicked, style }: any) => {
             stroke='currentColor'
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
               d='M6 18L18 6M6 6l12 12'
             />
           </svg>
         </button>
       </div>
-      <div className='flex flex-col h-screen pl-10 lg:pl-1'>
-        <div className='flex-shrink-0 p-4 pt-10'>
-          <p className='text-white font-semibold'>Orders #34562</p>
-          <div className='flex flex-row'>
-            {Options.map(({ name }, index) => {
-              return (
-                <div key={index} className='grid grid-flow-col px-1 py-2'>
-                  {" "}
-                  <button
-                    onClick={() => handleOptionClick(index)}
-                    className={` ${
-                      active === index
-                        ? `bg-primary`
-                        : `border-2 border-gray-700/50`
-                    } px-2 w-full rounded-md `}
-                  >
-                    <div
-                      className={` ${
-                        active === index
-                          ? `text-white`
-                          : `text-primary font-normal`
-                      } text-xs mt-2 mb-2 font-bold`}
-                    >
-                      {name}
-                    </div>
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className='flex-1 p-4 overflow-y-hidden'>
-          <div className='flex flex-row justify-between space-y-2  border-b-2 pb-4 border-gray-700'>
+      <div className='flex flex-col h-screen'>
+        <Options />
+        <div className='p-4 overflow-auto'>
+          <div className='flex flex-row justify-between space-y-2  border-b-2 pb-4 pl-10 lg:pl-1 border-gray-700'>
             <div className='flex flex-row justify-between space-x-24'>
               <p className='text-white'>Item</p>
               <div className='flex text-white space-x-8'>
@@ -74,69 +39,9 @@ const Settings = ({ clicked, setClicked, style }: any) => {
               </div>
             </div>
           </div>
-          <div className='space-y-6'>
-            <div className='flex items-center justify-between'></div>
-            <div className='container scroll-py-4'>
-              {HotDishesData.map(({ title, img, price, quantity }, index) => {
-                return (
-                  <div key={index} className='space-y-4'>
-                    <a href='#' className='flex items-start space-x-2 group '>
-                      <img
-                        className='flex-shrink-0 object-cover w-10 h-10 rounded-full'
-                        src={img}
-                        alt='John Doe'
-                      />
-                      <div className='overflow-hidden'>
-                        <h4 className='font-semibold text-white transition-colors truncate'>
-                          {title}
-                        </h4>
-                        <p className='text-sm text-gray-400 truncate pt-1'>
-                          {price}
-                        </p>
-                        <div className='pt-2'>
-                          <input
-                            className=' bg-bgGrey rounded-md text-start pl-2'
-                            placeholder='Oder Note...'
-                          />
-                        </div>
-                      </div>
-                      <span className='text-xs text-white bg-bgGrey px-4 py-2 rounded-md whitespace-nowrap '>
-                        1
-                      </span>
-                      <div className='flex flex-col justify-center items-center space-y-2 whitespace-nowrap '>
-                        <p className='text-white'>{price}</p>
-                        <div className=' border-primary border-2 rounded-md px-2 py-2'>
-                          <img
-                            src={pathToAsset + "Trash.png"}
-                            className='w-6'
-                          />
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <Cart />
         </div>
-        {/* <div className='fixed bottom-0'>
-          <footer className=' bg-bgGrey w-screen'>
-            <div className='px-4 flex flex-col'>
-              <div className='flex flex-row justify-between py-6 text-sm'>
-                <p className=' text-textLight'>Discount</p>
-                <p className='text-white'>$ 0</p>
-              </div>
-              <div className='flex flex-row justify-between py-2 text-sm'>
-                <p className=' text-textLight'>Sub total</p>
-                <p className='text-white'>$ 41.50</p>
-                          </div>
-                          <div className="py-2"></div>
-                          <button className="text-white bg-primary rounded-md py-2">
-                              Continue to payement
-                          </button>
-            </div>
-          </footer>
-        </div> */}
+        <ConfirmCartButton />
       </div>
     </section>
   );
