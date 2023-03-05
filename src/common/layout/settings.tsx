@@ -3,7 +3,7 @@ import Cart from "../containers/cart";
 import ConfirmCartButton from "../containers/confirm-cart-button";
 import Options from "../containers/options";
 
-const Settings = ({ clicked, setClicked, style }: any) => {
+const Settings = ({ setClicked, style }: any) => {
   return (
     <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-72 sm:w-80 lg:w-96  focus:outline-none xl:w-[30vw]'>
       <div className='absolute -right-14 p-2 transform -translate-x-full lg:hidden'>

@@ -56,9 +56,6 @@ const SideNavBar = () => {
               </ul>
             );
           })}
-          {/* <div className='flex items-center justify-center py-14 pb-5 xl:py-2'>
-            <img src={pathToAssetToSideBar + "Logout.png"} />
-          </div> */}
         </div>
       </div>
     </div>

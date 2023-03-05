@@ -8,8 +8,10 @@ import Card from "./card";
 import DropDown from "./drop-down";
 import Hero from "./hero";
 const pathToAsset = "/assets/image/";
+
 const HomeComponent = () => {
   const [clicked, setClicked] = React.useState<boolean>(false);
+
   return (
     <div className=' bg-baseDark w-screen h-screen  xl:w-full'>
       <NavBar clicked={clicked} setClicked={setClicked} />
