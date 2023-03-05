@@ -23,7 +23,7 @@ const Cart = () => {
                   <p className='text-sm text-gray-400 truncate pt-1'>{price}</p>
                   <div className='pt-2'>
                     <input
-                      className=' bg-bgGrey rounded-md text-start pl-2 py-2 lg:px-14'
+                      className=' bg-bgGrey rounded-md py-2 lg:px-14'
                       placeholder='Oder Note...'
                     />
                   </div>

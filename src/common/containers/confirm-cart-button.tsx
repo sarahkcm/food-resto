@@ -1,8 +1,9 @@
+import { useRouter } from "next/router";
 import React from "react";
 
-const ConfirmCartButton = () => {
+const ConfirmCartButton = ({ show, setShow }: any) => {
   return (
-    <div className='relative bottom-0 w-full bg-bgGrey '>
+    <div className='relative bottom-0 w-full bg-baseDark2 '>
       <div className='px-4 flex flex-col'>
         <div className='flex flex-row justify-between py-6 text-sm'>
           <p className=' text-textLight'>Discount</p>
@@ -13,7 +14,10 @@ const ConfirmCartButton = () => {
           <p className='text-white'>$ 41.50</p>
         </div>
         <div className='py-2'></div>
-        <button className='text-white bg-primary rounded-md py-2'>
+        <button
+          onClick={() => setShow(true)}
+          className='text-white bg-primary rounded-md py-2'
+        >
           Continue to payement
         </button>
       </div>
