@@ -1,6 +1,8 @@
+import { MethodPaymentType } from "../types/methos-payment";
+
 const pathToAssetToCard = "assets/image/card/";
 
-export const MethodsPaymentData = [
+export const MethodsPaymentData: Array<MethodPaymentType> = [
   {
     title: "Credit Card",
     img_deactivate: pathToAssetToCard + "Card-deactivate.png",

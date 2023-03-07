@@ -17,7 +17,7 @@ const Cart = () => {
                   alt='John Doe'
                 />
                 <div className='overflow-hidden'>
-                  <h4 className='font-semibold text-white transition-colors truncate'>
+                  <h4 className='font-semibold text-white truncate'>
                     {title}
                   </h4>
                   <p className='text-sm text-gray-400 truncate pt-1'>{price}</p>

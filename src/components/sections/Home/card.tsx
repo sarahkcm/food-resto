@@ -4,7 +4,7 @@ const Card = ({ img, quantity, title, price }: any) => {
   const [isClicked, setIsClicked] = React.useState(false);
   return (
     <button
-      className='relative max-w-md mx-auto min-w-[24vw] min-h-[36vh] break-words bg-baseDark2 w-full mb-6 sm:mb-10 shadow-lg rounded-xl mt-16 md:max-w-[26vw] lg:min-w-[16vw]'
+      className='relative max-w-md mx-auto min-w-[24vw] min-h-[36vh] break-words bg-baseDark2 w-full mb-6 sm:mb-10 shadow-lg rounded-xl mt-16 md:max-w-[26vw] lg:min-w-[16vw] lg:min-h-[26vh] xl:min-w-[4vw] xl:min-h-[28vh] 2xl:min-w-[8vw]'
       onClick={() => setIsClicked(!isClicked)}
     >
       <div>

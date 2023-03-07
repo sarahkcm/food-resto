@@ -10,7 +10,7 @@ const DropDown = () => {
   const [selected, setSelected] = useState(options[0]);
 
   return (
-    <div className='py-1'>
+    <div className='py-1 lg:px-10'>
       <div className='w-full pt-1'>
         <Listbox
           value={selected}

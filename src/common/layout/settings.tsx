@@ -10,7 +10,7 @@ const Settings = ({ setClicked, style }: any) => {
     <div className=''>
       <div className={`${show ? `hidden` : `block`}`}>
 
-      <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-72 sm:w-80 lg:w-96  focus:outline-none xl:w-[30vw]'>
+      <section className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2  w-10/12 sm:w-80 lg:w-[34vw]  focus:outline-none xl:w-[30vw]'>
         <div className='absolute -right-14 p-2 transform -translate-x-full lg:hidden'>
           <button
             onClick={() => setClicked(false)}

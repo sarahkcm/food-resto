@@ -2,22 +2,17 @@ import React from "react";
 
 const Search = () => {
   return (
-    <div className='overflow-auto'>
-      <div className='flex items-center '>
-        <div className='pt-2 relative mx-auto text-gray-600 flex items-center'>
+        <div className=' py-3 relative mx-auto text-gray-600 overflow-auto'>
           <input
-            className='border-2 border-gray-700 bg-baseDark h-10 pl-8 rounded-lg text-sm focus:outline-none'
-            type='search'
-            name='search'
+            className='border-2 border-gray-700 bg-baseDark h-10 pl-8 rounded-lg text-sm text-white focus:outline-none focus:bg-baseDark2'
+            type='input'
             placeholder='Search for food, coffe, etc..'
           />
-          <button type='submit' className='ml-auto mt-3 absolute top-2 left-2'>
+          <button type='submit' className='ml-auto mt-3 absolute top-3 left-2'>
             <svg
               className='h-4 w-4 fill-current'
               xmlns='http://www.w3.org/2000/svg'
               xmlnsXlink='http://www.w3.org/1999/xlink'
-              version='1.1'
-              id='Capa_1'
               x='0px'
               y='0px'
               viewBox='0 0 56.966 56.966'
@@ -29,8 +24,6 @@ const Search = () => {
             </svg>
           </button>
         </div>
-      </div>
-    </div>
   );
 };
 

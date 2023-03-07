@@ -7,7 +7,7 @@ import MethodPayement from "./method-payement";
 const PayementComponent = () => {
 
   return (
-    <div>
+    <div className="">
       <div className='fixed inset-y-0 top-0 right-0 z-10 flex-shrink-0 bg-baseDark2 w-full sm:w-1/2 lg:w-6/12 h-screen'>
         <div className='py-10 md:px-10'>
           <div className='border-b-2 pb-8 border-textLight/50'>

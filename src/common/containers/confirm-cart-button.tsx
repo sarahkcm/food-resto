@@ -3,7 +3,7 @@ import React from "react";
 
 const ConfirmCartButton = ({ show, setShow }: any) => {
   return (
-    <div className='relative bottom-0 w-full bg-baseDark2 '>
+    <div className='relative bottom-0 w-full py-6 bg-baseDark2 '>
       <div className='px-4 flex flex-col'>
         <div className='flex flex-row justify-between py-6 text-sm'>
           <p className=' text-textLight'>Discount</p>
@@ -14,12 +14,12 @@ const ConfirmCartButton = ({ show, setShow }: any) => {
           <p className='text-white'>$ 41.50</p>
         </div>
         <div className='py-2'></div>
-        <button
-          onClick={() => setShow(true)}
-          className='text-white bg-primary rounded-md py-2'
-        >
-          Continue to payement
-        </button>
+          <button
+            onClick={() => setShow(true)}
+            className='text-white bg-primary rounded-md py-2 shadow-md shadow-primary/50'
+          >
+            Continue to payement
+          </button>
       </div>
     </div>
   );
