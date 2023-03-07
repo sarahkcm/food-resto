@@ -1,6 +1,6 @@
-import React from "react";
-import Title from "../../../common/components/Home/title";
+import React, { useEffect } from "react";
 import { HotDishesData } from "../../../common/constants/hot-dishes";
+import Title from "../../../common/components/Home/title";
 import Menu from "../../../common/layout/menu";
 import NavBar from "../../../common/layout/nav-bar";
 import Settings from "../../../common/layout/settings";
@@ -13,12 +13,21 @@ const HomeComponent = () => {
   const [clicked, setClicked] = React.useState<boolean>(false);
   const [open, setOpen] = React.useState<boolean>(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setClicked(false);
+        setOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div
-      className={`${
-        open ? `bg-` : ``
-      } bg-baseDark w-screen h-screen  xl:w-full`}
-    >
+    <div className={` bg-baseDark w-screen h-screen  xl:w-full`}>
       <NavBar
         clicked={clicked}
         setClicked={setClicked}
@@ -40,8 +49,8 @@ const HomeComponent = () => {
         </div>
       )}
       <div
-        className={`${
-          open || clicked ? ` opacity-10 shadow-md shadow-black` : ``
+        className={`  ${
+          open || clicked ? ` brightness-75` : ``
         } bg-baseDark md:pl-20 lg:flex lg:flex-row lg:justify-between`}
       >
         <div className='lg:w-8/12'>
@@ -51,12 +60,14 @@ const HomeComponent = () => {
             <Title text={"Choose Dishes"} status={false} />
             <DropDown />
           </div>
-          <div className='px-4 '>
-            <div className='grid xs:grid-cols-2 place-items-center bg-baseDark gap-x-10 sm:grid-cols-3 lg:grid-cols-3 lg:w-11/12 lg:px-6 sm:px-4'>
+          <div className='px-4 pt-10'>
+            <div className='grid xs:grid-cols-2 place-items-center bg-baseDark gap-x-10 gap-y-8 sm:grid-cols-3 lg:grid-cols-3 lg:w-11/12 lg:px-6 sm:px-4'>
               {HotDishesData.map(({ title, img, price, quantity }, index) => {
                 return (
                   <div key={index} className=''>
                     <Card
+                      open={open}
+                      clicked={clicked}
                       title={title}
                       img={img}
                       price={price}
@@ -78,5 +89,4 @@ const HomeComponent = () => {
     </div>
   );
 };
-
 export default HomeComponent;
